@@ -106,9 +106,10 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
+  gap: 20px;
   padding: 18px 7vw;
   background: linear-gradient(
     to bottom,
@@ -120,12 +121,51 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
+.header-logo-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(10px) scale(0.9);
+  animation: headerLogoReveal 0.8s ease-out forwards 0.3s;
+}
+
+@keyframes headerLogoReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+    filter: blur(3px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.header-logo-image .logo-image {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(111, 255, 233, 0.4));
+  transition: filter 0.3s ease-out;
+}
+
+.header-logo-image .logo-image:hover {
+  filter: drop-shadow(0 0 20px rgba(111, 255, 233, 0.6));
+}
+
+.nav {
+  justify-self: end;
+}
+
 .logo {
   position: relative;
   display: inline-flex;
   flex-direction: column;
   gap: 3px;
   overflow: visible;
+  justify-self: start;
 }
 
 /* === LOGOTYPE FLICKER LOAD === */
@@ -592,6 +632,7 @@ body {
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+  grid-template-rows: auto 1fr;
   gap: 30px;
   align-items: center;
   margin-bottom: 64px;
@@ -601,6 +642,7 @@ body {
   transform: translateY(20px) scale(0.98);
   animation: heroReveal 1.2s ease-out forwards 0.4s;
 }
+
 
 @keyframes heroReveal {
   0% {
@@ -1118,6 +1160,20 @@ body {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .site-header {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .header-logo-image {
+    order: -1;
+    justify-self: center;
+  }
+
+  .nav {
+    justify-self: center;
+  }
+
   .hero-card {
     order: -1;
   }
@@ -1159,5 +1215,10 @@ body {
 
   .site-header {
     padding-top: 14px;
+  }
+
+  .header-logo-image .logo-image {
+    width: 48px;
+    height: 48px;
   }
 }

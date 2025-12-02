@@ -1151,3 +1151,13 @@ body {
     padding-inline: 16px;
   }
 }
+
+@media (max-width: 480px) {
+  .logo-main {
+    font-size: 1rem;
+  }
+
+  .site-header {
+    padding-top: 14px;
+  }
+}

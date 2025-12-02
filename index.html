@@ -5,31 +5,36 @@
   <meta charset="UTF-8" />
   <title>Zalia – Mystery, Choice & Consequence</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Zalia is a 2.5D, grid-based multiplayer world about mystery, choice and consequence – built in Unreal Engine."
-  />
+  <meta name="description" content="Zalia is a mysterious 2.5D RPG forged in Unreal. A world shaped by mystique, choice and consequence. Explore freely and carve your own path." />
   <!-- OpenGraph -->
-  <meta property="og:title" content="Zalia – Mystery, Choice & Consequence" />
-  <meta property="og:description" content="Zalia is a 2.5D, grid-based multiplayer world about mystery, choice and consequence – built in Unreal Engine." />
-  <meta property="og:image" content="https://zalia.se/graph.jpeg" />
-  <meta property="og:url" content="https://zalia.se/" />
+  <meta property="og:title" content="Zalia – A 2.5D RPG Forged in Unreal, Built on Choice & Consequence" />
+  <meta property="og:description" content="Explore a mysterious 2.5D world forged in Unreal. Guided by mystique, shaped by choices, and defined by consequences. Carve your own path through Zalia." />
+  <meta property="og:image" content="/graph.jpeg" />
+  <meta property="og:url" content="https://www.zalia.se" />
   <meta property="og:type" content="website" />
-  <!-- Twitter/X Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Zalia – Mystery, Choice & Consequence" />
-  <meta name="twitter:description" content="Zalia is a 2.5D, grid-based multiplayer world about mystery, choice and consequence – built in Unreal Engine." />
-  <meta name="twitter:image" content="https://zalia.se/graph.jpeg" />
+  <meta name="twitter:title" content="Zalia – A 2.5D RPG Forged in Unreal, Built on Choice & Consequence" />
+  <meta name="twitter:description" content="Explore a mysterious 2.5D world forged in Unreal. Guided by mystique, shaped by choices, and defined by consequences. Carve your own path through Zalia." />
+  <meta name="twitter:image" content="/graph.jpeg" />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-  <div class="bg-orbit"></div>
-  <div class="bg-orbit bg-orbit-2"></div>
-
   <header class="site-header">
-    <div class="logo">
-      <span class="logo-main">ZALIA</span>
+    <div class="logo flicker-logo">
+      <span class="logo-main flicker-logo">
+        <span class="letter">Z</span>
+        <span class="letter">A</span>
+        <span class="letter">L</span>
+        <span class="letter">I</span>
+        <span class="letter">A</span>
+      </span>
+      <div class="logo-sparks">
+        <div class="s2"></div>
+        <div class="s3"></div>
+        <div class="s4"></div>
+      </div>
       <span class="logo-tagline">Grid-based, persistent world</span>
     </div>
     <nav class="nav">
@@ -87,7 +92,7 @@
       </div>
     </section>
 
-    <section id="about" class="section">
+    <section id="about" class="section fade-section">
       <h2>What is Zalia?</h2>
       <p>
         Zalia is my heart project – a 2.5D, grid-based online world inspired by classics like Tibia,
@@ -103,7 +108,7 @@
       </p>
     </section>
 
-    <section id="pillars" class="section section-columns">
+    <section id="pillars" class="section section-columns fade-section">
       <h2>Core pillars</h2>
       <div class="pillars">
         <article class="pillar">
@@ -131,7 +136,7 @@
       </div>
     </section>
 
-    <section id="status" class="section">
+    <section id="status" class="section fade-section">
       <h2>Pre-alpha status</h2>
       <p class="section-intro">
         Zalia is deep in systems-first pre-alpha. No promises, no dates – just honest work.
@@ -164,7 +169,7 @@
       </div>
     </section>
 
-    <section id="follow" class="section">
+    <section id="follow" class="section fade-section">
       <h2>Follow the journey</h2>
       <p>
         If you like worlds that don’t hold your hand, care more about meaning than monetization,
@@ -193,7 +198,7 @@
       </div>
     </section>
 
-    <section id="creator" class="section section-narrow">
+    <section id="creator" class="section section-narrow fade-section">
       <h2>The Zalia Commitment</h2>
       <p><strong>From the creator</strong></p>
       <p>
@@ -228,8 +233,45 @@
   </footer>
 
   <script>
+    // Prevent scroll restoration on page load
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    
+    // Remove hash from URL if present to prevent anchor scrolling
+    if (window.location.hash) {
+      window.history.replaceState(null, null, ' ');
+    }
+    
     // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
+    
+    // Force scroll to top - run multiple times to override any anchor scrolling
+    function forceScrollToTop() {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
+    
+    // Run immediately
+    forceScrollToTop();
+    
+    // Run on DOM ready
+    document.addEventListener('DOMContentLoaded', function() {
+      forceScrollToTop();
+      setTimeout(forceScrollToTop, 0);
+      setTimeout(forceScrollToTop, 10);
+      setTimeout(forceScrollToTop, 50);
+    });
+    
+    // Run after everything is loaded
+    window.addEventListener('load', function() {
+      forceScrollToTop();
+      setTimeout(forceScrollToTop, 0);
+      setTimeout(forceScrollToTop, 10);
+      setTimeout(forceScrollToTop, 50);
+      setTimeout(forceScrollToTop, 100);
+    });
   </script>
 </body>
 </html>

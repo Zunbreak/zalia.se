@@ -1,4 +1,4 @@
-## [Press here to Enter ->Zalia](https://zalia.se)
+## [Press here to Enter Zalia](https://zalia.se)
 
 A simple landing page for the **Zalia** project.
 

@@ -1,4 +1,4 @@
-## Zalia.se
+## [Zalia](https://zalia.se)
 
 A simple landing page for the **Zalia** project.
 
